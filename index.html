@@ -292,29 +292,31 @@
     </div>
 
     <div class="contact-form reveal">
+      <form action="https://formspree.io/f/xlgvqbkw" method="POST">
       <div class="form-row">
         <div class="form-field">
           <label>First Name</label>
-          <input type="text" placeholder="First Name"/>
+          <input type="text" placeholder="First Name" name="first-name" required/>
         </div>
         <div class="form-field">
           <label>Last Name</label>
-          <input type="text" placeholder="Last Name"/>
+          <input type="text" placeholder="Last Name" name="last-name" required/>
         </div>
       </div>
+      
       <div class="form-row">
         <div class="form-field">
           <label>Email</label>
-          <input type="email" placeholder="you@email.com"/>
+          <input type="email" placeholder="you@email.com" name="email" required/>
         </div>
         <div class="form-field">
           <label>Phone</label>
-          <input type="tel" placeholder="+212 ..."/>
+          <input type="tel" name="phone" placeholder="+212 ..." required/>
         </div>
       </div>
       <div class="form-field">
         <label>Service Interested In</label>
-        <select>
+        <select name="service">
           <option value="">Select a service...</option>
           <option>Quad Rental</option>
           <option>Apartment Rental</option>
@@ -328,9 +330,10 @@
       </div>
       <div class="form-field">
         <label>Message</label>
-        <textarea placeholder="Tell us about your group size, dates, and what you'd like to do..."></textarea>
+        <textarea placeholder="Tell us about your group size, dates, and what you'd like to do..." name="message" required></textarea>
       </div>
-      <button type="button" class="form-submit">Send Message ✦</button>
+      <button type="submit" class="form-submit">Send Message ✦</button>
+      </form>
     </div>
   </section>
 
