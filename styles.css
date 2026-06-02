@@ -5,14 +5,18 @@
         scroll-behavior: smooth;
      }
         :root {
-        --night: #0e0b07;
-        --night-mid: #1a150f;
-        --night-soft: rgba(14,11,7,0.85);
-        --gold: #d4932a;
-        --gold-light: #e5a95c;
-        --off-white: #fdf8f0;
-        --dune: #c9b29b;
-
+         --gold:        #d4932a;
+      --gold-light:  #e8b86d;
+      --sand:        #f2e4c8;
+      --sand-dark:   #e0c99a;
+      --dune:        #c4a876;
+      --earth:       #8b5e3c;
+      --night:       #0e0b07;
+      --night-mid:   #1c1509;
+      --night-soft:  #2a1f0e;
+      --off-white:   #fdf8f0;
+      --rust:        #b84a1e;
+    }
     html { scroll-behavior: smooth; }
 
     body {
@@ -604,7 +608,6 @@
       transition: color 0.3s;
     }
     .footer-socials a:hover { color: var(--gold); }
-    }
 
     /* scroll reveal */
     .reveal {
