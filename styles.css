@@ -458,10 +458,9 @@
       grid-template-columns: 1fr !important;
       grid-template-rows: none !important;
       gap: 12px;
-      margin-top: 3.5rem;
     }
     .gallery-item {
-      position: relative; overflow: hidden; border-radius: 2px;
+      height: 240px;
     }
     .gallery-item:nth-child(1) { grid-row: auto; }
     .gallery-item:nth-child(4) { grid-row: auto; }
@@ -481,7 +480,9 @@
       opacity: 0; transition: opacity 0.4s;
     }
     .gallery-item:hover .gallery-item-label { opacity: 1; }
-
+    video {
+      width: 100% ; height: auto; display: block; border-radius: 2px;
+    }
     /* ── CONTACT ── */
     .contact {
       padding: 8rem 5rem;
