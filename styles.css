@@ -621,7 +621,7 @@
     @media (max-width: 768px) {
       nav { padding: 1rem 2rem; }
       #navbar { flex-direction: column; align-items: center;gap: 15px; }
-      nav.scrolled { padding: 0rem 1rem; }
+      .nav.scrolled { padding: 0rem 1rem; }
       .nav-links { display: flex !important; flex-direction: row;flex-wrap: wrap;justify-content: center; gap: 10px;padding: 0; }
       .hero { padding: 5% 2rem; }
       .hero-compass, 
@@ -630,7 +630,7 @@
       .services-grid { grid-template-columns: 1fr !important;gap: 20px; }
       .why { grid-template-columns: 1fr; }
       .why-content { padding: 4rem 2rem; }
-      .gallery { padding: 5rem 2rem; }
+      .gallery { padding: 1rem 2rem; }
       .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
       .gallery-item:nth-child(1),
       .gallery-item:nth-child(4) { grid-row: auto; }
