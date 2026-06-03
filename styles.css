@@ -631,7 +631,7 @@
       .why { grid-template-columns: 1fr; }
       .why-content { padding: 4rem 2rem; }
       .gallery { padding: 1rem 2rem; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+      .gallery-grid { grid-template-columns: 1fr !important; gap: 20px; }
       .gallery-item:nth-child(1),
       .gallery-item:nth-child(4) { grid-row: auto; }
       .contact { grid-template-columns: 1fr; padding: 5rem 2rem; gap: 3rem; }
