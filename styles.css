@@ -648,36 +648,49 @@
       .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
       footer { padding: 3rem 2rem 2rem; }
     }
-.social-sub-icons {
+    .contact-detail .detail-text {
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 4px !important; 
+     align-items: flex-start !important;
+      justify-content: center !important;
+    }
+.contact-detail .social-sub-icons {
  display: flex !important;
  flex-direction: row !important;
   gap: 12px !important; 
   margin-top: 10px !important;
-  justify-content: flex-start !important;
+ padding: 0 !important;
+ position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
 }
-.sub-social-btn {
+.contact-detail .social-sub-icons  {
  display: inline-flex !important;
  align-items: center !important;
  justify-content: center !important; 
  width: 32px !important; 
  height: 32px !important;
- border-radius: 50% !important;
- transition:  all 0.3s ease !important;
+ min-width: 32px !important;
+ min-height: 32px !important;
  background-color: rgba(255,255,255,0.1) !important;
+ border-radius: 50% !important;
+ text-decoration: none !important;
+ transition: all 0.3s ease !important;
 }
-.sub-social-btn svg {
- width: 16px !important; 
- height: 16px !important;
- max-width: 16px !important;
- max-height: 16px !important;
+.contact-detail  .sub-social-btn svg {
+ width: 14px !important; 
+ height: 14px !important;
+ max-width: 14px !important;
+ max-height: 14px !important;
  fill: #ffffff !important; 
  stroke: #ffffff !important;
  display: block !important;
 }
-.sub-social-btn:hover {
+.contact-detail .sub-social-btn:hover {
  background-color: #cda252 !important; 
  }
-.sub-social-btn svg {
+.contact-detail  .sub-social-btn svg {
  fill: #000000 !important; 
  stroke: #000000 !important;
  }
