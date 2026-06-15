@@ -647,50 +647,94 @@
       .form-row { grid-template-columns: 1fr; }
       .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
       footer { padding: 3rem 2rem 2rem; }
-    }
-    .contact-detail .detail-text {
-      display: flex !important;
-      flex-direction: column !important;
-      gap: 4px !important; 
-     align-items: flex-start !important;
-      justify-content: center !important;
-    }
+     }
+/* =========================================================
+   التنسيق النهائي الصارم لأيقونات السوشيال ميديا (حاسوب + هاتف)
+   ========================================================= */
+
+/* 1. إصلاح تمدد الصندوق الداكن ليتسع للأيقونات بدون تداخل */
+.contact-detail {
+  height: auto !important;
+  min-height: 90px !important; /* منح الصندوق مساحة مريحة للتمدد */
+  display: flex !important;
+  align-items: flex-start !important;
+}
+
+/* 2. تنظيم النصوص عمودياً بشكل منتظم */
+.contact-detail .detail-text {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: 4px !important;
+  width: 100% !important;
+  height: auto !important;
+}
+
+/* 3. إجبار حاوية الأيقونات على الاستقرار كصف أفقي أسفل الإيميل مباشرة */
 .contact-detail .social-sub-icons {
- display: flex !important;
- flex-direction: row !important;
-  gap: 12px !important; 
-  margin-top: 10px !important;
- padding: 0 !important;
- position: relative !important;
-  left: 0 !important;
-  top: 0 !important;
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 10px !important;
+  margin-top: 8px !important;
+  padding: 0 !important;
+  width: auto !important;
 }
-.contact-detail .social-sub-icons  {
- display: inline-flex !important;
- align-items: center !important;
- justify-content: center !important; 
- width: 32px !important; 
- height: 32px !important;
- min-width: 32px !important;
- min-height: 32px !important;
- background-color: rgba(255,255,255,0.1) !important;
- border-radius: 50% !important;
- text-decoration: none !important;
- transition: all 0.3s ease !important;
+
+/* 4. تصميم الدوائر الخلفية للأيقونات (حجم الحاسوب المثالي) */
+.contact-detail .sub-social-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 32px !important;       /* حجم الدائرة على الحاسوب */
+  height: 32px !important;      /* حجم الدائرة على الحاسوب */
+  min-width: 32px !important;
+  min-height: 32px !important;
+  background-color: rgba(255, 255, 255, 0.1) !important; /* لون الخلفية الدائرية */
+  border-radius: 50% !important;
+  text-decoration: none !important;
+  transition: all 0.3s ease !important;
 }
-.contact-detail  .sub-social-btn svg {
- width: 14px !important; 
- height: 14px !important;
- max-width: 14px !important;
- max-height: 14px !important;
- fill: #ffffff !important; 
- stroke: #ffffff !important;
- display: block !important;
+
+/* 5. ⚠️ السطر الحاسم لتصغير الـ SVG ومنع تضخمه الافتراضي على الحاسوب */
+.contact-detail .sub-social-btn svg {
+  width: 14px !important;       /* حجم الأيقونة الداخلي الصغير والمناسب */
+  height: 14px !important;      /* حجم الأيقونة الداخلي الصغير والمناسب */
+  min-width: 14px !important;
+  min-height: 14px !important;
+  max-width: 14px !important;
+  max-height: 14px !important;
+  fill: #ffffff !important;     /* تلوين الفيس بوك */
+  stroke: #ffffff !important;   /* تلوين حدود انستغرام */
+  display: block !important;
 }
+
+/* 6. تأثير التمرير الفأري (Hover) باللون الذهبي */
 .contact-detail .sub-social-btn:hover {
- background-color: #cda252 !important; 
- }
-.contact-detail  .sub-social-btn svg {
- fill: #000000 !important; 
- stroke: #000000 !important;
- }
+  background-color: #cda252 !important; /* اللون الذهبي لموقعك */
+  transform: translateY(-2px) !important;
+}
+.contact-detail .sub-social-btn:hover svg {
+  fill: #000000 !important;
+  stroke: #000000 !important;
+}
+
+/* 7. ضبط توافقية الهواتف الذكية التلقائي */
+@media (max-width: 768px) {
+  .contact-detail .social-sub-icons {
+    margin-top: 10px !important;
+    gap: 12px !important;
+  }
+  .contact-detail .sub-social-btn {
+    width: 30px !important;
+    height: 30px !important;
+    min-width: 30px !important;
+    min-height: 30px !important;
+  }
+  .contact-detail .sub-social-btn svg {
+    width: 13px !important;
+    height: 13px !important;
+    min-width: 13px !important;
+    min-height: 13px !important;
+  }
+}
