@@ -627,9 +627,15 @@
 
     @media (max-width: 768px) {
       nav { padding: 1rem 2rem; }
-      #navbar { display: flex !important; flex-direction: row !important; align-items: center !important;justify-content: space-between !important; gap: 10px !important; padding: 10px 15px !important; height: auto !important; }
+      #navbar { display: flex !important; flex-direction: row !important; align-items: center !important;
+       justify-content: space-between !important; gap: 10px !important; padding: 10px 15px !important;
+       height: auto !important; }
       .nav.scrolled { padding: 0rem 1rem; }
-      .nav-links { display: flex !important; flex-direction: row;flex-wrap: wrap;justify-content: flex-end !important; gap: 6px !important;padding: 0 !important; }
+      .nav-links { display: flex !important; flex-direction: row;flex-wrap: nowrap !important; align-items: center !important;
+        justify-content: flex-end !important; 
+        gap: 6px !important;padding: 0 !important; margin: 0 !important; list-style: none !important; }
+      .nav-links a { font-family:  11px !important; padding: 6px 10px !important; white-space: nowrap !important;display: block !important; }
+      .nav-links li { display: inline-block !important; }
       .hero { padding: 3rem 1rem !important; }
       .hero-compass, 
       .hero-stats { display: none; }
