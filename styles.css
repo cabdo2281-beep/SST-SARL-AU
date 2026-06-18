@@ -654,3 +654,54 @@
       .footer-top { grid-template-columns: 1fr 1fr; gap: 2.5rem; }
       footer { padding: 3rem 2rem 2rem; }
      }
+     /* =========================================================
+   توحيد مظهر خانات الخدمات والمدن مع باقي حقول النموذج
+   ========================================================= */
+
+#service-select, 
+#city-select {
+    width: 100% !important;
+    padding: 12px 15px !important;              /* مساحة داخلية مريحة ومطابقة للحقول الأخرى */
+    background-color: rgba(255, 255, 255, 0.05) !important; /* خلفية شفافة داكنة مثل الحقول العلوية */
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;   /* إطار خفيف جداً */
+    border-radius: 6px !important;              /* انحناء زوايا مطابق تماماً */
+    color: #ffffff !important;                  /* لون النص أبيض */
+    font-size: 14px !important;                 /* حجم الخط المناسب للنموذج */
+    font-family: inherit !important;            /* استخدام نفس نوع الخط للموقع */
+    outline: none !important;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease !important;
+    cursor: pointer !important;
+    
+    /* إلغاء مظهر السهم الافتراضي القبيح للمتصفح لتطوير مظهر مخصص */
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+    appearance: none !important;
+    
+    /* إضافة سهم لأسفل مخصص وأنيق باستخدام خلفية SVG لتوضيح أنه حقل منسدل */
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23ffffff' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e") !important;
+    background-repeat: no-repeat !important;
+    background-position: right 15px center !important; /* وضع السهم على اليمين */
+    background-size: 15px !important;           /* حجم السهم */
+}
+
+/* تأثير التوهج عند الضغط على الحقل (Focus) ليطابق مدخلات الاسم والإيميل */
+#service-select:focus, 
+#city-select:focus {
+    border-color: #cda252 !important;           /* يتغير الإطار للون الذهبي الخاص بهويتك سيلوان */
+    box-shadow: 0 0 8px rgba(205, 162, 82, 0.2) !important;
+}
+
+/* تحسين مظهر الخيارات المنسدلة للأنظمة المتوافقة */
+#service-select option, 
+#city-select option {
+    background-color: #111111 !important;       /* لون خلفية القائمة عند فتحها لتبقى مظلمة وأنيقة */
+    color: #ffffff !important;
+    padding: 10px !important;
+}
+
+/* تنسيق احترافي للحقل عندما يكون مغلقاً (Disabled) */
+#city-select:disabled {
+    opacity: 0.4 !important;                    /* جعله شبه شفاف ليعرف الزبون أنه مغلق مؤقتاً */
+    cursor: not-allowed !important;             /* تغيير مؤشر الماوس لعلامة المنع */
+    background-color: rgba(255, 255, 255, 0.02) !important;
+}
