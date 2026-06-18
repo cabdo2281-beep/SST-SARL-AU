@@ -343,34 +343,28 @@
           <input type="tel" name="phone" placeholder="+212 ..." required/>
         </div>
       </div>
-      <div class="form-field">
-        <label>Service Interested In</label>
-        <select name="service">
-          <option value="">Select a service...</option>
-          <option>Quad Rental</option>
-          <option>Apartment Rental</option>
-          <option>Car Rental</option>
-          <option>Paintball</option>
-          <option>Tourist Transport</option>
-          <option>Tourist Trips</option>
-          <option>Tourism Guidance</option>
-          <option>Multiple Services</option>
-        </select>
-      </div>
-      <div class="form-field">
-        <label>CITY Interested In</label>
-        <select name="CITY">
-          <option value="">Select a CITY...</option>
-          <option>AGADIR</option>
-          <option>MARRAKECH</option>
-          <option>ERG CHIGAGA</option>
-          <option>ESSAOUIRA</option>
-          <option>LAAYOUNE</option>
-          <option>SMARA</option>
-          <option>EDAKHELA</option>
-          <option>MERZOUGA</option>
-        </select>
-      </div>
+      <div class="form-group">
+  <label>SERVICE INTERESTED IN</label>
+  <select id="service-select" name="service" required>
+    <option value="" disabled selected>Select a service...</option>
+    <option value="quad">Quad Rental (تأجير الكواد)</option>
+    <option value="apartment">Apartment Rental (تأجير الشقق)</option>
+    <option value="car">Car Rental (تأجير السيارات)</option>
+    <option value="paintball">Paintball (الباينت بول)</option>
+    <option value="transport">Tourist Transport (النقل السياحي)</option>
+    <option value="trips">4x4 Safari & Camel Tours (رحلات السفاري والجمال) </option>
+    <option value="guidance">Tourism Guidance (الإرشاد السياحي)</option>
+   
+  </select>
+</div>
+
+<div class="form-group">
+  <label>CITY INTERESTED IN</label>
+  <select id="city-select" name="city" required disabled>
+    <option value="" disabled selected>Select a CITY...</option>
+  </select>
+</div>
+
       <div class="form-field">
         <label>Message</label>
         <textarea placeholder="Tell us about your group size, dates, and what you'd like to do..." name="message" required></textarea>
@@ -443,5 +437,49 @@
     }, { threshold: 0.12 });
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
+ <script>
+document.addEventListener("DOMContentLoaded", function () {
+    // 1. تحديد العناصر من الـ HTML بدقة
+    const serviceSelect = document.getElementById("service-select");
+    const citySelect = document.getElementById("city-select");
+
+    // 2. قاعدة البيانات الشاملة: ربط كل قيمة value بالمدن المتاحة لها فعلياً
+    const serviceCities = {
+        quad: ["Smara", "Agadir ", "Laayoune ", "Erg Chigaga"],
+        apartment: ["Agadir "],
+        car: ["Agadir "],
+        paintball: ["Agadir "],
+        transport: ["Agadir", "Marrakech", "Essaouira", "Erg Chigaga"],
+        guidance: ["Smara", "Laayoune", "Dakhla", "Agadir", "Marrakech", "Essaouira", "Erg Chigaga"],
+        trips: ["Smara", "Laayoune", "Dakhla", "Agadir", "Marrakech", "Essaouira", "Erg Chigaga"],
+    };
+
+    // 3. مراقبة حدث التغيير عند اختيار الخدمة
+    serviceSelect.addEventListener("change", function () {
+        const selectedService = this.value;
+
+        // إعادة تهيئة حقل المدن ومسح الاختيارات السابقة
+        citySelect.innerHTML = '<option value="" disabled selected>Select a CITY...</option>';
+
+        // التحقق من وجود الخدمة المحددة داخل قاعدة البيانات
+        if (selectedService && serviceCities[selectedService]) {
+            // تفعيل الحقل فوراً ليتمكن الزبون من الاختيار
+            citySelect.disabled = false;
+
+            // توليد خيارات المدن المتاحة فقط وتعبئتها ديناميكياً
+            serviceCities[selectedService].forEach(function (city) {
+                const option = document.createElement("option");
+                // تنظيف القيمة البرمجية وجعلها مناسبة للإرسال للفورم
+                option.value = city.toLowerCase().replace(/[\s()]/g, ''); 
+                option.textContent = city;
+                citySelect.appendChild(option);
+            });
+        } else {
+            // إعادة قفل الحقل إذا لم يحدد الزبون خدمة صالحة
+            citySelect.disabled = true;
+        }
+    });
+});
+</script>
 </body>
 </html>
